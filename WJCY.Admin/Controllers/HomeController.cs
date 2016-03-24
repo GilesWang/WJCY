@@ -22,7 +22,7 @@ namespace WJCY.Admin.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "My contact page.";
 
             return View();
         }
