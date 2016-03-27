@@ -42,8 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="Domain\LogAction.cs" />
-    <Compile Include="Domain\LogSystem.cs" />
+    <Compile Include="Domain\Logs\LogAction.cs" />
+    <Compile Include="Domain\Logs\LogSystem.cs" />
+    <Compile Include="Domain\Addresses\Address.cs" />
+    <Compile Include="Domain\XZGHs\City.cs" />
+    <Compile Include="Domain\XZGHs\Country.cs" />
+    <Compile Include="Domain\XZGHs\Province.cs" />
+    <Compile Include="Domain\XZGHs\State.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

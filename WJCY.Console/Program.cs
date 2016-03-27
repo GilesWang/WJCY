@@ -16,16 +16,23 @@ namespace WJCY.Console
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WJCYDbContext>());
             sysCon.WriteLine("系统启动");
-            InsertLogSystem();
+            while (true)
+            {
+                InsertLogSystem();
+                var str = sysCon.ReadLine();
+                if (str == "exit")
+                {
+                    break;
+                }
+            }
             sysCon.WriteLine("操作结束");
-            sysCon.Read();
         }
 
         private static void InsertLogSystem()
         {
             var logSystem = new Core.Domain.LogSystem()
             {
-                LogSystemId = 1,
+
                 LogSystemName = "后台系统"
             };
             using (var context = new WJCYDbContext())

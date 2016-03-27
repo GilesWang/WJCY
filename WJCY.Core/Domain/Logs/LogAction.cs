@@ -24,5 +24,9 @@ namespace WJCY.Core.Domain
         /// 日志动作所属的系统
         /// </summary>
         public LogSystem System { get; set; }
+        /// <summary>
+        /// 日志动作所属系统的ID
+        /// </summary>
+        public int SystemId { get; set; }
     }
 }

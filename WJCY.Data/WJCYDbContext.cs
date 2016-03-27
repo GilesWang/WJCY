@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using WJCY.Core.Domain;
+using WJCY.Data.Mapping;
 
 namespace WJCY.Data
 {
@@ -12,16 +13,22 @@ namespace WJCY.Data
     {
         public DbSet<LogSystem> LogSystems { get; set; }
         public DbSet<LogAction> LogActions { get; set; }
+        public DbSet<State> States { get; set; }
+        public DbSet<Province> Provinces { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<LogSystem>().Property(d => d.LogSystemName).IsRequired().HasMaxLength(50).HasColumnName("SystemName");
-            modelBuilder.Entity<LogSystem>().Property(d => d.LogSystemId).HasColumnName("SystemId");
-            modelBuilder.Entity<LogSystem>().ToTable("LogSystem");
-
-            modelBuilder.Entity<LogAction>().ToTable("LogAction");
-            modelBuilder.Entity<LogAction>().Property(q => q.Name).HasColumnName("ActionName").IsRequired().HasMaxLength(15);
-
+            modelBuilder.Configurations.Add(new LogActionMap());
+            modelBuilder.Configurations.Add(new LogSystemMap());
+            modelBuilder.Configurations.Add(new StateMap());
+            modelBuilder.Configurations.Add(new ProvinceMap());
+            modelBuilder.Configurations.Add(new CityMap());
+            modelBuilder.Configurations.Add(new CountryMap());
+            modelBuilder.Configurations.Add(new AddressMap());
 
 
 
