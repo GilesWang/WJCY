@@ -54,6 +54,8 @@
     <Compile Include="Domain\XZGHs\Province.cs" />
     <Compile Include="Domain\XZGHs\State.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Page\IPagedList.cs" />
+    <Compile Include="Page\PagedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
