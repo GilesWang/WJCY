@@ -54,6 +54,8 @@
     <Compile Include="Mapping\Address\AddressMap.cs" />
     <Compile Include="Mapping\Log\LogActionMap.cs" />
     <Compile Include="Mapping\Log\LogSystemMap.cs" />
+    <Compile Include="Mapping\User\PersonMap.cs" />
+    <Compile Include="Mapping\User\VipMap.cs" />
     <Compile Include="Mapping\WJCYComplexTypeConfiguration.cs" />
     <Compile Include="Mapping\WJCYEntityTypeConfiguration.cs" />
     <Compile Include="Mapping\XZGH\CityMap.cs" />

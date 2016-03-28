@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using WJCY.Core.Domain;
 using WJCY.Data.Mapping;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace WJCY.Data
 {
@@ -29,10 +31,24 @@ namespace WJCY.Data
             modelBuilder.Configurations.Add(new CityMap());
             modelBuilder.Configurations.Add(new CountryMap());
             modelBuilder.Configurations.Add(new AddressMap());
-
+            modelBuilder.Configurations.Add(new PersonMap());
+            modelBuilder.Configurations.Add(new VipMap());
 
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        public WJCYDbContext(string databaseName) : base(databaseName)
+        {
+
+        }
+        public WJCYDbContext() : base("WJCY_TEST2")
+        {
+
+        }
+        public WJCYDbContext(DbConnection connection) : base(connection, contextOwnsConnection: false)
+        {
+
         }
     }
 }

@@ -11,14 +11,15 @@ namespace WJCY.Data.Mapping
     {
         public AddressMap()
         {
-            ToTable("Address");
+            ToTable("Address", "dbo");
             HasKey(t => t.AddressId);
-            //HasOptional(t => t.State).WithOptionalDependent();
-            //HasOptional(t => t.Province).WithOptionalDependent();
-            //HasOptional(t => t.City).WithOptionalDependent();
-            //HasOptional(t => t.Country).WithOptionalDependent();
+            HasOptional(t => t.State).WithMany().HasForeignKey(t => t.StateId).WillCascadeOnDelete(false);
+            HasOptional(t => t.Province).WithMany().HasForeignKey(t => t.ProvinceId).WillCascadeOnDelete(false);
+            HasOptional(t => t.City).WithMany().HasForeignKey(t => t.CityId).WillCascadeOnDelete(false);
+            HasOptional(t => t.Country).WithMany().HasForeignKey(t => t.CountryId).WillCascadeOnDelete(false);
             Property(t => t.DetailAddress).HasMaxLength(150).IsRequired();
-            Property(t => t.FullAddress).HasMaxLength(200).IsRequired();
+            Ignore(t => t.FullAddress);
+            Map<VipAddress>(m => { m.ToTable("VipAddress"); m.MapInheritedProperties(); });
         }
     }
 }

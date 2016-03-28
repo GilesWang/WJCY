@@ -19,7 +19,7 @@ namespace WJCY.Core.Domain
         /// <summary>
         /// 国家ID
         /// </summary>
-        public string StateId { get; set; }
+        public int? StateId { get; set; }
         /// <summary>
         /// 省份
         /// </summary>
@@ -27,7 +27,7 @@ namespace WJCY.Core.Domain
         /// <summary>
         /// 省份ID
         /// </summary>
-        public string ProvinceId { get; set; }
+        public int? ProvinceId { get; set; }
         /// <summary>
         /// 城市
         /// </summary>
@@ -35,7 +35,7 @@ namespace WJCY.Core.Domain
         /// <summary>
         /// 城市Id
         /// </summary>
-        public string CityId { get; set; }
+        public int? CityId { get; set; }
         /// <summary>
         /// 县城或区
         /// </summary>
@@ -43,18 +43,20 @@ namespace WJCY.Core.Domain
         /// <summary>
         /// 县城或区 名称
         /// </summary>
-        public string CountryId { get; set; }
+        public int? CountryId { get; set; }
         /// <summary>
         /// 具体地址 （包括什么路什么小区几号几0几等）
         /// </summary>
-        public string DetailAddress { get; set; }
+        public string DetailAddress
+        {
+            get; set;
+        }
         /// <summary>
         /// 完整地址
         /// </summary>
-        public string FullAddress { get; set; }
-        /// <summary>
-        /// 地址类型（根据不同的地址类型映射到不同的表，有客户地址，供应商地址，门店地址等）
-        /// </summary>
-        public short AddressType { get; set; }
+        public string FullAddress
+        {
+            get { return State.StateName + Province.ProvinceName + City.CityName + Country.CountryName + DetailAddress; }
+        }
     }
 }

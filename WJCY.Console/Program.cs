@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,15 +31,35 @@ namespace WJCY.Console
 
         private static void InsertLogSystem()
         {
-            var logSystem = new Core.Domain.LogSystem()
+            var address = new WJCY.Core.Domain.Address()
             {
+                AddressId = Guid.NewGuid(),
+                DetailAddress = "永吉路97弄7号301"
 
-                LogSystemName = "后台系统"
             };
-            using (var context = new WJCYDbContext())
+            var vipAddress = new WJCY.Core.Domain.VipAddress()
             {
-                context.LogSystems.Add(logSystem);
-                context.SaveChanges();
+                AddressId = Guid.NewGuid(),
+                DetailAddress = "永吉路97弄7号301",
+                VipCard = "test"
+            };
+
+            var str = @"Data Source=DESKTOP-CN5DFKO;Initial Catalog=WJCY_TEST2;Persist Security Info=True;User ID=GilesWang;pwd=wfg1990@";
+            using (var connection = new SqlConnection(str))
+            {
+                using (var context = new WJCYDbContext(connection))
+                {
+                    context.Addresses.Add(address);
+                    context.SaveChanges();
+                }
+
+
+
+                using (var context = new WJCYDbContext(connection))
+                {
+                    context.Addresses.Add(vipAddress);
+                    context.SaveChanges();
+                }
             }
         }
     }
