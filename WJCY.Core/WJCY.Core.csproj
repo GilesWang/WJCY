@@ -47,6 +47,8 @@
     <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />
     <Compile Include="Domain\Addresses\VipAddress.cs" />
+    <Compile Include="Domain\Dictionary\Dict.cs" />
+    <Compile Include="Domain\Dictionary\DictData.cs" />
     <Compile Include="Domain\Logs\LogAction.cs" />
     <Compile Include="Domain\Logs\LogSystem.cs" />
     <Compile Include="Domain\Addresses\Address.cs" />

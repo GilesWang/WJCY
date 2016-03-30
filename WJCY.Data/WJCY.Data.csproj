@@ -52,6 +52,8 @@
     <Compile Include="EfRepository.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Mapping\Address\AddressMap.cs" />
+    <Compile Include="Mapping\Dict\DictDataMapping.cs" />
+    <Compile Include="Mapping\Dict\DictMapping.cs" />
     <Compile Include="Mapping\Log\LogActionMap.cs" />
     <Compile Include="Mapping\Log\LogSystemMap.cs" />
     <Compile Include="Mapping\User\PersonMap.cs" />

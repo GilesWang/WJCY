@@ -21,6 +21,9 @@ namespace WJCY.Data
         public DbSet<Country> Countries { get; set; }
         public DbSet<Address> Addresses { get; set; }
 
+        public DbSet<Dict> Dicts { get; set; }
+        public DbSet<DictData> DictDatas { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -33,7 +36,8 @@ namespace WJCY.Data
             modelBuilder.Configurations.Add(new AddressMap());
             modelBuilder.Configurations.Add(new PersonMap());
             modelBuilder.Configurations.Add(new VipMap());
-
+            modelBuilder.Configurations.Add(new DictDataMapping());
+            modelBuilder.Configurations.Add(new DictMapping());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -42,7 +46,7 @@ namespace WJCY.Data
         {
 
         }
-        public WJCYDbContext() : base("WJCY_TEST2")
+        public WJCYDbContext() : base("WJCY")
         {
 
         }

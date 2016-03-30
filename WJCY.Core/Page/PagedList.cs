@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WJCY.Core.Page
 {
-    class PagedList<T> : List<T>, IPagedList<T>
+    public class PagedList<T> : List<T>, IPagedList<T>
     {
 
         public PagedList(IEnumerable<T> source, int pageIndex, int pageSize)

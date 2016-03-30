@@ -31,35 +31,47 @@ namespace WJCY.Console
 
         private static void InsertLogSystem()
         {
-            var address = new WJCY.Core.Domain.Address()
-            {
-                AddressId = Guid.NewGuid(),
-                DetailAddress = "永吉路97弄7号301"
+            #region Test
+            //var address = new WJCY.Core.Domain.Address()
+            //{
+            //    AddressId = Guid.NewGuid(),
+            //    DetailAddress = "永吉路97弄7号301"
 
-            };
-            var vipAddress = new WJCY.Core.Domain.VipAddress()
-            {
-                AddressId = Guid.NewGuid(),
-                DetailAddress = "永吉路97弄7号301",
-                VipCard = "test"
-            };
+            //};
+            //var vipAddress = new WJCY.Core.Domain.VipAddress()
+            //{
+            //    AddressId = Guid.NewGuid(),
+            //    DetailAddress = "永吉路97弄7号301",
+            //    VipCard = "test"
+            //};
 
-            var str = @"Data Source=DESKTOP-CN5DFKO;Initial Catalog=WJCY_TEST2;Persist Security Info=True;User ID=GilesWang;pwd=wfg1990@";
-            using (var connection = new SqlConnection(str))
+            //var str = @"Data Source=DESKTOP-CN5DFKO;Initial Catalog=WJCY;Persist Security Info=True;User ID=GilesWang;pwd=wfg1990@";
+            //using (var connection = new SqlConnection(str))
+            //{
+            //    using (var context = new WJCYDbContext(connection))
+            //    {
+            //        context.Addresses.Add(address);
+            //        context.SaveChanges();
+            //    }
+
+
+
+            //    using (var context = new WJCYDbContext(connection))
+            //    {
+            //        context.Addresses.Add(vipAddress);
+            //        context.SaveChanges();
+            //    }
+            //} 
+            #endregion
+
+            using (var context = new WJCYDbContext())
             {
-                using (var context = new WJCYDbContext(connection))
+                var logSytem = new WJCY.Core.Domain.LogSystem()
                 {
-                    context.Addresses.Add(address);
-                    context.SaveChanges();
-                }
-
-
-
-                using (var context = new WJCYDbContext(connection))
-                {
-                    context.Addresses.Add(vipAddress);
-                    context.SaveChanges();
-                }
+                    LogSystemName = "后台系统"
+                };
+                context.LogSystems.Add(logSytem);
+                context.SaveChanges();
             }
         }
     }

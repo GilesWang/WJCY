@@ -40,7 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dict\DictDataService.cs" />
+    <Compile Include="Dict\DictService.cs" />
+    <Compile Include="Dict\IDictDataService.cs" />
+    <Compile Include="Dict\IDictService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WJCY.Core\WJCY.Core.csproj">
+      <Project>{904ce322-e336-4ad5-b2db-11feaccf8764}</Project>
+      <Name>WJCY.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WJCY.Data\WJCY.Data.csproj">
+      <Project>{ac28a792-a209-4f8e-b053-531a4938117f}</Project>
+      <Name>WJCY.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Log\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
