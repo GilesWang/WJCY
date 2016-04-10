@@ -1711,11 +1711,11 @@
     <Content Include="Views\Log\SystemList.cshtml" />
     <Content Include="Views\Log\LogList.cshtml" />
     <Content Include="Views\Common\Menu.cshtml" />
+    <Content Include="Views\Dict\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\Home\" />
-    <Folder Include="Views\Dict\" />
     <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
