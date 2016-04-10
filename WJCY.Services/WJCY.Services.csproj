@@ -45,6 +45,8 @@
     <Compile Include="Dict\IDictDataService.cs" />
     <Compile Include="Dict\IDictService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\EmployeeService.cs" />
+    <Compile Include="User\IEmployeeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WJCY.Core\WJCY.Core.csproj">

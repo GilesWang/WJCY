@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,39 @@ namespace WJCY.Data
 {
     public class EfRepository<T> : IRepository<T> where T : BaseEntity
     {
+        #region Fields
+        private DbContext context = null;
+        private IDbSet<T> _entities = null;
+        #endregion
+
+        #region ctor
+        public EfRepository()
+        {
+            context = new WJCYDbContext();
+        }
+        #endregion
+
+        #region Properties
+        public IDbSet<T> Entities
+        {
+            get
+            {
+
+                if (_entities == null)
+                {
+                    _entities = context.Set<T>();
+                    return _entities;
+                }
+                return _entities;
+            }
+        }
+        #endregion
+
         public IQueryable<T> Table
         {
             get
             {
-                throw new NotImplementedException();
+                return this.Entities;
             }
         }
 
@@ -27,12 +56,25 @@ namespace WJCY.Data
 
         public void Delete(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            if (entities == null)
+            {
+                throw new ArgumentNullException("entities");
+            }
+            foreach (var entity in entities)
+            {
+                this.Entities.Remove(entity);
+            }
+            this.context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            this.Entities.Remove(entity);
+            context.SaveChanges();
         }
 
         public T GetById(object id)
@@ -42,22 +84,41 @@ namespace WJCY.Data
 
         public void Insert(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            if (entities == null)
+            {
+                throw new ArgumentNullException("entities");
+            }
+            foreach (var entity in entities)
+                this.Entities.Add(entity);
+            this.context.SaveChanges();
         }
 
         public void Insert(T entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            this.Entities.Add(entity);
+            this.context.SaveChanges();
         }
 
         public void Update(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            if (entities == null)
+            {
+                throw new ArgumentNullException("entities");
+            }
+            this.context.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            this.context.SaveChanges();
         }
     }
 }

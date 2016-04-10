@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{E91A450C-0051-4961-BE67-FE0CCC2B4AAC}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WJCY.Admin", "WJCY.Admin\WJCY.Admin.csproj", "{6E308FF7-C51C-4BE4-AB80-CE10B65781AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WJCY.Console", "WJCY.Console\WJCY.Console.csproj", "{63BEA045-AB98-4A82-9D65-D84274BD8850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WJCY.Common", "WJCY.Common\WJCY.Common.csproj", "{9B41F387-8EC4-46A8-B95C-7E02FD483CF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{63BEA045-AB98-4A82-9D65-D84274BD8850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63BEA045-AB98-4A82-9D65-D84274BD8850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63BEA045-AB98-4A82-9D65-D84274BD8850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B41F387-8EC4-46A8-B95C-7E02FD483CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B41F387-8EC4-46A8-B95C-7E02FD483CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B41F387-8EC4-46A8-B95C-7E02FD483CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B41F387-8EC4-46A8-B95C-7E02FD483CF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{695705F1-7FCF-422E-91A5-6B3ED8FAA4F8} = {77A42AEA-A2EF-4A1E-9A95-AA21190714D8}
 		{6E308FF7-C51C-4BE4-AB80-CE10B65781AB} = {77A42AEA-A2EF-4A1E-9A95-AA21190714D8}
 		{63BEA045-AB98-4A82-9D65-D84274BD8850} = {77A42AEA-A2EF-4A1E-9A95-AA21190714D8}
+		{9B41F387-8EC4-46A8-B95C-7E02FD483CF7} = {E91A450C-0051-4961-BE67-FE0CCC2B4AAC}
 	EndGlobalSection
 EndGlobal

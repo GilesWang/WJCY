@@ -56,6 +56,7 @@
     <Compile Include="Mapping\Dict\DictMapping.cs" />
     <Compile Include="Mapping\Log\LogActionMap.cs" />
     <Compile Include="Mapping\Log\LogSystemMap.cs" />
+    <Compile Include="Mapping\User\EmployeeMapping.cs" />
     <Compile Include="Mapping\User\PersonMap.cs" />
     <Compile Include="Mapping\User\VipMap.cs" />
     <Compile Include="Mapping\WJCYComplexTypeConfiguration.cs" />
@@ -68,6 +69,10 @@
     <Compile Include="WJCYDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WJCY.Common\WJCY.Common.csproj">
+      <Project>{9b41f387-8ec4-46a8-b95c-7e02fd483cf7}</Project>
+      <Name>WJCY.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WJCY.Core\WJCY.Core.csproj">
       <Project>{904ce322-e336-4ad5-b2db-11feaccf8764}</Project>
       <Name>WJCY.Core</Name>

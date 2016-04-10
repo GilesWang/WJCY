@@ -52,6 +52,7 @@
     <Compile Include="Domain\Logs\LogAction.cs" />
     <Compile Include="Domain\Logs\LogSystem.cs" />
     <Compile Include="Domain\Addresses\Address.cs" />
+    <Compile Include="Domain\User\Employee.cs" />
     <Compile Include="Domain\User\Person.cs" />
     <Compile Include="Domain\User\Vip.cs" />
     <Compile Include="Domain\XZGHs\City.cs" />

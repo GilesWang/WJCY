@@ -8,6 +8,7 @@ using WJCY.Core.Domain;
 using WJCY.Data.Mapping;
 using System.Data.Common;
 using System.Data.SqlClient;
+using WJCY.Common;
 
 namespace WJCY.Data
 {
@@ -23,6 +24,7 @@ namespace WJCY.Data
 
         public DbSet<Dict> Dicts { get; set; }
         public DbSet<DictData> DictDatas { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -38,21 +40,24 @@ namespace WJCY.Data
             modelBuilder.Configurations.Add(new VipMap());
             modelBuilder.Configurations.Add(new DictDataMapping());
             modelBuilder.Configurations.Add(new DictMapping());
+            modelBuilder.Configurations.Add(new EmployeeMapping());
 
             base.OnModelCreating(modelBuilder);
         }
 
-        public WJCYDbContext(string databaseName) : base(databaseName)
+        public WJCYDbContext()
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WJCYDbContext>());
+            Database.Connection.ConnectionString = WJCYDbConfig.ConnectionStr;
 
         }
-        public WJCYDbContext() : base("WJCY")
-        {
+        //public WJCYDbContext() : base("WJCY")
+        //{
 
-        }
-        public WJCYDbContext(DbConnection connection) : base(connection, contextOwnsConnection: false)
-        {
+        //}
+        //public WJCYDbContext(DbConnection connection) : base(connection, contextOwnsConnection: false)
+        //{
 
-        }
+        //}
     }
 }

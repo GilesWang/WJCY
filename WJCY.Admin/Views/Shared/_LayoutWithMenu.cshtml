@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderBody()
+
+
+@section headMenu
+{
+
+    @Html.Action("Menu", "Common")
+
+}
+
+@section scripts
+{
+    <script>
+        $("#menu-images").kendoMenu();
+
+    </script>
+}
+

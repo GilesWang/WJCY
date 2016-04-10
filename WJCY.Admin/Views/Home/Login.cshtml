@@ -1,0 +1,29 @@
+﻿
+@using WJCY.Admin.Models.Home;
+@model EmployeeLoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $('#login').kendoButton();
+    </script>
+
+}
+
+<div class="login-div">
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        <div>@Html.ValidationSummary()</div>
+        <div><p>用户登陆</p></div>
+        <div>
+            <div>@Html.LabelFor(model => model.EmployeeNo)</div>
+            <div>@Html.TextBoxFor(model => model.EmployeeNo, new { placeholder = "用户名" })</div>
+            <div>@Html.LabelFor(model => model.pwd)</div>
+            <div>@Html.PasswordFor(model => model.pwd, new { placeholder = "密码" })</div>
+            <div><input type="submit" id="login" class="k-primary" /></div>
+        </div>
+    }
+</div>

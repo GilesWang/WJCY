@@ -1,0 +1,45 @@
+﻿@using WJCY.Admin.Models.Common
+@model IEnumerable<MenuViewModel>
+<div class="container header-menu">
+    <ul id="menu-images">
+        @foreach (var menu in Model)
+        {
+            <li>
+                @Html.ActionLink(menu.MenuText, menu.MenuAction, menu.MenuController)
+                @if (menu.ChildMenuList != null && menu.ChildMenuList.Count > 0)
+                {
+                    <ul>
+                        @foreach (var m in menu.ChildMenuList)
+                        {
+                            <li>
+                                @Html.ActionLink(m.MenuText, m.MenuAction, m.MenuController)
+                                @if (m.ChildMenuList != null && m.ChildMenuList.Count > 0)
+                                {
+                                    <ul>
+                                        @foreach (var m2 in m.ChildMenuList)
+                                        {
+                                            <li>
+                                                @Html.ActionLink(m2.MenuText, m2.MenuAction, m2.MenuController)
+                                                @if (m2.ChildMenuList != null && m2.ChildMenuList.Count > 0)
+                                {
+                                                    <ul>
+                                                        @foreach (var m3 in m2.ChildMenuList)
+                                                        {
+                                                            <li>
+                                                                @Html.ActionLink(m3.MenuText, m3.MenuAction, m3.MenuController)
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                }
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</div>
