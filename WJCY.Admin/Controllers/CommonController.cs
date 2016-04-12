@@ -66,11 +66,11 @@ namespace WJCY.Admin.Controllers
                 menuList.Add(new MenuViewModel()
                 {
                     MenuText = "字典系统",
-                    MenuAction = "DictKeyList",
+                    MenuAction = "Index",
                     MenuController = "Dict",
                     ChildMenuList = new List<MenuViewModel>() {
                     new MenuViewModel() {MenuText = "字典Key",
-                    MenuAction = "DictKeyList",
+                    MenuAction = "Index",
                     MenuController = "Dict"
                     },
                     new MenuViewModel() { MenuText = "字典值",

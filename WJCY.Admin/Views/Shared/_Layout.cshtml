@@ -9,6 +9,11 @@
     <link href="~/Content/kendo/2016.1.406/kendo.common.min.css" rel="stylesheet" />
     <link href="~/Content/kendo/2016.1.406/kendo.bootstrap.min.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/kendo/2016.1.406/kendo.ui.core.min.js"></script>
+    <script src="~/Scripts/kendo/2016.1.406/cultures/kendo.culture.zh-CN.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -30,23 +35,33 @@
             </div>
         </div>
     </div>
-
-    @RenderSection("headMenu", required: false);
-
     <div class="container body-content">
+        @if (IsSectionDefined("HeaderMenu"))
+        {
+            @RenderSection("HeaderMenu")
+        }
+        else
+        {
+            <div class="header-menu">
+                @Html.Action("Menu", "Common")
+            </div>
+        }
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我家菜园</p>
-        </footer>
+
+
+        @*@if (IsSectionDefined("Notifications"))
+        {
+            @RenderSection("Notifications")
+        }
+        else
+        {
+            <div class="notification">
+                @Html.Partial("Notifications")
+            </div>
+        }*@
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/bootstrap")
-    <script src="~/Scripts/kendo/2016.1.406/kendo.ui.core.min.js"></script>
-    <script src="~/Scripts/kendo/2016.1.406/cultures/kendo.culture.zh-CN.min.js"></script>
+    
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

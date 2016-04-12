@@ -49,7 +49,6 @@ namespace WJCY.Data
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WJCYDbContext>());
             Database.Connection.ConnectionString = WJCYDbConfig.ConnectionStr;
-
         }
         //public WJCYDbContext() : base("WJCY")
         //{

@@ -1151,8 +1151,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Scripts\kendo\2016.1.406\messages\kendo.messages.zh-TW.min.js.map" />
@@ -1707,7 +1705,6 @@
     <Content Include="Scripts\kendo\2016.1.406\cultures\kendo.culture.am-ET.min.js.map" />
     <Content Include="Scripts\kendo\2016.1.406\cultures\kendo.culture.af.min.js.map" />
     <Content Include="Scripts\kendo\2016.1.406\cultures\kendo.culture.af-ZA.min.js.map" />
-    <Content Include="Views\Shared\_LayoutWithMenu.cshtml" />
     <Content Include="Views\Log\SystemList.cshtml" />
     <Content Include="Views\Log\LogList.cshtml" />
     <Content Include="Views\Common\Menu.cshtml" />

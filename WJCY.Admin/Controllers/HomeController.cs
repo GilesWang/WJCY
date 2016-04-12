@@ -18,9 +18,9 @@ namespace WJCY.Admin.Controllers
         #endregion
 
         #region ctor
-        public HomeController()
+        public HomeController(IEmployeeService employeeService)
         {
-            employeeService = new EmployeeService(new EfRepository<Employee>());
+            this.employeeService = employeeService;
         }
         #endregion
 
