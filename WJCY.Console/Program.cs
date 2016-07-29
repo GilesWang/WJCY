@@ -16,7 +16,7 @@ namespace WJCY.Console
         static void Main(string[] args)
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WJCYDbContext>());
-            sysCon.WriteLine("系统启动");
+            sysCon.WriteLine("系统启动1");
             while (true)
             {
                 InsertLogSystem();
